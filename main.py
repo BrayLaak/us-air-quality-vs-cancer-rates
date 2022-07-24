@@ -56,25 +56,25 @@ merged_data = merged_data.dropna()
 # Begin creating subplots for each data column
 fig, ax = plt.subplots()
 
-# Plot AQI, set tick labels to the same color, and set label
+# Plot AQI, set tick labels to the same color, set labels, and set legend
 ax.plot(merged_data['Year'], merged_data['AQI'], color='red')
 ax.tick_params(axis='y', labelcolor='red')
 ax.set_ylabel('AQI',  color='red', fontsize=15)
+ax.set_xlabel('Year')
 
 
 # Generate a new axis instance to use for CHF data
 ax2 = ax.twinx()
 
-# Plot congestive heart failure deaths, change tick color, and set label
+# Plot congestive heart failure deaths, change tick color, set labels, and set legend
 ax2.plot(merged_data['Year'], merged_data['Deaths'], color='green')
 ax2.tick_params(axis='y', labelcolor='green')
 ax2.set_ylabel('CHF Deaths',  color='green', fontsize=15)
+ax2.set_xlabel('Year')
 
-# Add title, legend, xlabel, and grid to graph
-plt.title(label='AQI and Yearly CHF Deaths')
-plt.legend(['AQI', 'CHF Deaths'])
 
-plt.xlabel('Year')
+# Add title and grid to graph
+plt.title(label='US AQI and Yearly CHF Deaths from 1999-2020')
 plt.grid()
 
 plt.show()
