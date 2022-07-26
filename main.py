@@ -31,6 +31,11 @@ aqi_data = aqi_data.reset_index(drop=True)
 # Round off AQI data to one decimal
 aqi_data = aqi_data.round(1)
 
+# Create AQI Readings graph
+aqi_graph = aqi_data.plot(x='Year', y='AQI', title='AQI Readings from 1988-2022', color='red')
+aqi_graph.grid()
+
+aqi_graph.figure.savefig('AQI Readings.pdf')
 
 
 
@@ -46,7 +51,14 @@ chf_data = chf_data.drop(chf_data.columns[[0, 2, 3, 4, 6, 7]], axis=1)
 # Change column types to int
 chf_data = chf_data.astype({"Year": int, "Deaths": int})
 
-# Merge dataframes on Year create new merged dataframe
+# Create Yearly CHF Deaths graph
+chf_graph = chf_data.plot(x='Year', y='Deaths', title='Yearly CHF Deaths from 1999-2020', color='green')
+chf_graph.grid()
+
+chf_graph.figure.savefig('CHF Deaths.pdf')
+
+
+# Merge dataframes on Year, create new merged dataframe
 merged_data = aqi_data.merge(chf_data, on='Year', how='outer')
 
 # Drop any rows with NAN values to trim the dataframe down to only years that both columns have data for
@@ -73,8 +85,12 @@ ax2.set_ylabel('CHF Deaths',  color='green', fontsize=15)
 ax2.set_xlabel('Year')
 
 
-# Add title and grid to graph
-plt.title(label='US AQI and Yearly CHF Deaths from 1999-2020')
+# Add title and grid to graph, then scale output
+plt.title(label='AQI and Yearly CHF Deaths from 1999-2020')
 plt.grid()
+fig.set_tight_layout(True)
 
-plt.show()
+# Save graph to file
+
+
+fig.figure.savefig('Combined Graph.pdf')

@@ -8,13 +8,26 @@ This project will compare yearly deaths from congestive heart failure with the a
 
 It will: 
 
-    Pull in data from csv and txt files gathered from the sources cited below
+    Pull in data from csv and tab delineated txt files gathered from the sources cited below
 
     Use built-in pandas functions to clean the data
 
-    Use custom functions to operate on the data
+    Make 2 basic plots with matplotlib to visualize the data from each dataset and output the graphs to the following files:
+        "AQI Readings.pdf"
+        "CHF Deaths.pdf"
 
-    Make 2 basic plots with matplotlib or seaborn to visualize the requested data
+    Combine the dataframes, plot the data on one graph for comparison, and output the graph to the following file:
+        "Combined Graph.pdf"
+
+# Instructions
+Clone the repository to your local machine. 
+Install all requirements listed in "requirements.txt"
+Open a cmd terminal in us-air-quality-vs-heart-failure-rates\.venv\Scripts folder
+type the word "activate", and hit enter
+cd back to main folder and enter the command "python main.py"
+The graphs should now be generated and saved in the main folder
+
+
 
 # Sources
 A Kaggle dataset of US AQI data 1988-2022:
