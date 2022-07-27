@@ -33,6 +33,7 @@ Combine the dataframes, plot the data on one graph for comparison, and output th
 
 
 # Instructions
+This project was created in Python 3.10.4
 1. Clone the repository to your local machine.
 
 2. Install all requirements listed in "requirements.txt"
