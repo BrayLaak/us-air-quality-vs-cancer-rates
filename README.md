@@ -19,6 +19,8 @@ Pull in data from csv and tab delineated txt files gathered from the sources cit
 
 Use built-in pandas functions to clean the data
 
+Use custom functions to operate on the data
+
 Make 2 basic plots with matplotlib to visualize the data from each dataset and output the graphs to the following files: 
 
 >"AQI Readings.pdf"
