@@ -15,17 +15,17 @@ def generate_graph(df, xAxis, yAxis, graph_title, graph_color):
 
 
 
-# Code to trim the original US_AQI.csv file before uploading because it was 600MB 
+# Code to trim the original US_AQI.csv file and convert to pickle before uploading because it was 600MB 
 
 #aqi_data = pd.read_csv("US_AQI.csv")
 #aqi_data = aqi_data.drop(aqi_data.columns[[0, 1, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14]], axis=1)
 #aqi_data = aqi_data.loc[aqi_data['Defining Parameter'] == 'PM2.5']
-#aqi_data.to_csv(r'C:/Users/Brayden/Documents/GitHub/us-air-quality-vs-heart-failure-rates/data/data.csv', index = False)
+#aqi_data.to_pickle('US_AQI.pkl')
 
 
 
-# Read in AQI data csv and remove header row
-aqi_data = pd.read_csv("US_AQI.csv", header=[0])
+# Read in AQI data pickle
+aqi_data = pd.read_pickle("US_AQI.pkl")
 
 # Change "Date" column to datetime
 aqi_data['Date'] = pd.to_datetime(aqi_data['Date'])

@@ -47,6 +47,11 @@ This project was created in Python 3.10.4
 6. The graphs should now be generated and saved in the main folder
 
 
+# Notes
+The original US_AQI.csv file had to be trimmed and converted to a pickle file before uploading because it was 600MB
+
+The code used has been left commented in "main.py"
+
 # Sources
 A Kaggle dataset of US AQI data 1988-2022:
 https://www.kaggle.com/datasets/calebreigada/us-air-quality-1980present?select=US_AQI.csv
