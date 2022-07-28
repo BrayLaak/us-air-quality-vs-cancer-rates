@@ -15,15 +15,6 @@ def generate_graph(df, xAxis, yAxis, graph_title, graph_color):
 
 
 
-# Code to trim the original US_AQI.csv file and convert to pickle before uploading because it was 600MB 
-
-#aqi_data = pd.read_csv("US_AQI.csv")
-#aqi_data = aqi_data.drop(aqi_data.columns[[0, 1, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14]], axis=1)
-#aqi_data = aqi_data.loc[aqi_data['Defining Parameter'] == 'PM2.5']
-#aqi_data.to_pickle('US_AQI.pkl')
-
-
-
 # Read in AQI data pickle
 aqi_data = pd.read_pickle("US_AQI.pkl")
 
